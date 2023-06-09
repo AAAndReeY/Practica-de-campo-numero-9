@@ -9,42 +9,26 @@ package garbageapp;
  *
  * @author Personal
  */
-public class Distrito {
+public class Distrito extends Ciudad {
     
-    private String NombreDistrito;
-    private String Poblacion;
-    private String AreasConmasSolidos;
-    private String Reporte;
-
-    public String getNombreDistrito() {
-        return NombreDistrito;
+    private String nombreDistrito;
+    private String NumPoblacion;
+    private String LugarconmasSolidos;
+    
+    public Distrito(String nombreCiudad, String nombreDistrito, String NumPoblacion,
+    String LugarconmasSolidos) {
+        super(nombreCiudad);
+        this.nombreDistrito = nombreDistrito;
+        this.NumPoblacion = NumPoblacion;
+        this.LugarconmasSolidos =  LugarconmasSolidos;
     }
-
-    public void setNombreDistrito(String NombreDistrito) {
-        this.NombreDistrito = NombreDistrito;
+    
+    @Override
+    public void mostrarInformacion() {
+        super.mostrarInformacion(); // Llama al método mostrarInformacion() de la clase "Ciudad"
+        System.out.println("Distrito: " + nombreDistrito);
+        System.out.println("Poblacion: " + NumPoblacion);
+        System.out.println("Ubicacion: " + LugarconmasSolidos);
     }
-
-    public String getPoblacion() {
-        return Poblacion;
-    }
-
-    public void setPoblacion(String Poblacion) {
-        this.Poblacion = Poblacion;
-    }
-
-    public String getAreasConmasSolidos() {
-        return AreasConmasSolidos;
-    }
-
-    public void setAreasConmasSolidos(String AreasConmasSolidos) {
-        this.AreasConmasSolidos = AreasConmasSolidos;
-    }
-
-    public String getReporte() {
-        return Reporte;
-    }
-
-    public void setReporte(String Reporte) {
-        this.Reporte = Reporte;
-    }
+        
 }

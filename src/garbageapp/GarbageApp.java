@@ -15,7 +15,12 @@ public class GarbageApp {
      * @param args the command line arguments
      */
     public static void main(String[] args) {
+        
+        Distrito miDistrito = new Distrito("Lima", "Miraflores","64546","Mercado vencedores");
+        miDistrito.mostrarInformacion();
         // TODO code application logic here
     }
+    
+    
     
 }

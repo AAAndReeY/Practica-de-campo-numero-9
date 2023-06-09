@@ -1,3 +1,4 @@
+
 /*
  * To change this license header, choose License Headers in Project Properties.
  * To change this template file, choose Tools | Templates
@@ -5,17 +6,27 @@
  */
 package PantalllasGarbage;
 
+import javax.swing.DefaultListModel;
+import garbageapp.Navegador;
+import java.util.ArrayList;
+import java.util.List;
+
+
 /**
  *
  * @author Personal
  */
 public class PantallaDistrito extends javax.swing.JFrame {
-
+    
+    DefaultListModel modeloLista = new DefaultListModel();
+    List<Navegador> navegadores = new ArrayList<>();
+    
     /**
      * Creates new form PantallaDistrito
      */
     public PantallaDistrito() {
         initComponents();
+        listDistritos.setModel(modeloLista);
     }
 
     /**
@@ -31,8 +42,8 @@ public class PantallaDistrito extends javax.swing.JFrame {
         listDistritos = new javax.swing.JList<>();
         jLabel2 = new javax.swing.JLabel();
         txtNombreDistrito = new javax.swing.JTextField();
-        btnBuscar = new javax.swing.JButton();
-        btnSalir = new javax.swing.JButton();
+        btnBuscarDistrito = new javax.swing.JButton();
+        btnSalirDistrito = new javax.swing.JButton();
         lblDistritos = new javax.swing.JLabel();
 
         setDefaultCloseOperation(javax.swing.WindowConstants.EXIT_ON_CLOSE);
@@ -46,7 +57,7 @@ public class PantallaDistrito extends javax.swing.JFrame {
         listDistritos.setLayoutOrientation(javax.swing.JList.VERTICAL_WRAP);
         jScrollPane1.setViewportView(listDistritos);
 
-        getContentPane().add(jScrollPane1, new org.netbeans.lib.awtextra.AbsoluteConstraints(10, 110, 213, -1));
+        getContentPane().add(jScrollPane1, new org.netbeans.lib.awtextra.AbsoluteConstraints(10, 110, 350, -1));
 
         jLabel2.setFont(new java.awt.Font("Tahoma", 1, 14)); // NOI18N
         jLabel2.setText("Nombre Distrito :");
@@ -58,15 +69,20 @@ public class PantallaDistrito extends javax.swing.JFrame {
                 txtNombreDistritoActionPerformed(evt);
             }
         });
-        getContentPane().add(txtNombreDistrito, new org.netbeans.lib.awtextra.AbsoluteConstraints(10, 80, 160, -1));
+        getContentPane().add(txtNombreDistrito, new org.netbeans.lib.awtextra.AbsoluteConstraints(10, 80, 220, -1));
 
-        btnBuscar.setBackground(new java.awt.Color(153, 255, 255));
-        btnBuscar.setText("Buscar");
-        getContentPane().add(btnBuscar, new org.netbeans.lib.awtextra.AbsoluteConstraints(260, 40, 100, 40));
+        btnBuscarDistrito.setBackground(new java.awt.Color(153, 255, 255));
+        btnBuscarDistrito.setText("Buscar");
+        btnBuscarDistrito.addActionListener(new java.awt.event.ActionListener() {
+            public void actionPerformed(java.awt.event.ActionEvent evt) {
+                btnBuscarDistritoActionPerformed(evt);
+            }
+        });
+        getContentPane().add(btnBuscarDistrito, new org.netbeans.lib.awtextra.AbsoluteConstraints(260, 40, 100, 40));
 
-        btnSalir.setBackground(new java.awt.Color(255, 51, 51));
-        btnSalir.setText("Salir");
-        getContentPane().add(btnSalir, new org.netbeans.lib.awtextra.AbsoluteConstraints(160, 270, 90, 40));
+        btnSalirDistrito.setBackground(new java.awt.Color(255, 51, 51));
+        btnSalirDistrito.setText("Salir");
+        getContentPane().add(btnSalirDistrito, new org.netbeans.lib.awtextra.AbsoluteConstraints(160, 270, 90, 40));
 
         lblDistritos.setFont(new java.awt.Font("Tahoma", 1, 18)); // NOI18N
         lblDistritos.setText("Distrito");
@@ -76,9 +92,36 @@ public class PantallaDistrito extends javax.swing.JFrame {
     }// </editor-fold>//GEN-END:initComponents
 
     private void txtNombreDistritoActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_txtNombreDistritoActionPerformed
+        buscar();
         // TODO add your handling code here:
     }//GEN-LAST:event_txtNombreDistritoActionPerformed
 
+    private void btnBuscarDistritoActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_btnBuscarDistritoActionPerformed
+
+        buscar();
+        // TODO add your handling code here:
+    }//GEN-LAST:event_btnBuscarDistritoActionPerformed
+
+    
+    private void buscar() {
+        modeloLista.removeAllElements();
+        for(Navegador nav : navegadores)
+        {
+            if(nav.getNombre().toLowerCase()
+                .contains(txtNombreDistrito.getText().toLowerCase())){
+                modeloLista.addElement(nav.getNombre());
+            }
+        }
+    }
+    
+    void actualizaLista(){
+     modeloLista.removeAllElements();
+     for(Navegador nav : navegadores)
+     {
+       modeloLista.addElement(nav.getNombre());
+       
+     }  
+    }
     /**
      * @param args the command line arguments
      */
@@ -109,14 +152,15 @@ public class PantallaDistrito extends javax.swing.JFrame {
         /* Create and display the form */
         java.awt.EventQueue.invokeLater(new Runnable() {
             public void run() {
+               
                 new PantallaDistrito().setVisible(true);
             }
         });
     }
 
     // Variables declaration - do not modify//GEN-BEGIN:variables
-    private javax.swing.JButton btnBuscar;
-    private javax.swing.JButton btnSalir;
+    private javax.swing.JButton btnBuscarDistrito;
+    private javax.swing.JButton btnSalirDistrito;
     private javax.swing.JLabel jLabel2;
     private javax.swing.JScrollPane jScrollPane1;
     private javax.swing.JLabel lblDistritos;
