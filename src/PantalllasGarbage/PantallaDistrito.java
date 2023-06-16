@@ -8,6 +8,7 @@ package PantalllasGarbage;
 
 import javax.swing.DefaultListModel;
 import garbageapp.Navegador;
+import garbageapp.DistritoZonanueva;
 import java.util.ArrayList;
 import java.util.List;
 
@@ -20,13 +21,30 @@ public class PantallaDistrito extends javax.swing.JFrame {
     
     DefaultListModel modeloLista = new DefaultListModel();
     List<Navegador> navegadores = new ArrayList<>();
-    
+    List<DistritoZonanueva> Distritozona = new ArrayList<>();
+    String DatosLista;
     /**
      * Creates new form PantallaDistrito
      */
+    
+    public void Convertidor(){
+        int tam = modeloLista.size();
+        int count = 0;
+        
+        for(int=0;i<tam;i++)
+        {
+            Distritozona.get(i).
+            
+        }
+        
+            
+    }
+    
+    
+
     public PantallaDistrito() {
         initComponents();
-        listDistritos.setModel(modeloLista);
+        listDistritos.setText(DatosLista);
     }
 
     /**
@@ -38,27 +56,22 @@ public class PantallaDistrito extends javax.swing.JFrame {
     // <editor-fold defaultstate="collapsed" desc="Generated Code">//GEN-BEGIN:initComponents
     private void initComponents() {
 
-        jScrollPane1 = new javax.swing.JScrollPane();
-        listDistritos = new javax.swing.JList<>();
+        listDistritos = new javax.swing.JTextArea();
         jLabel2 = new javax.swing.JLabel();
         txtNombreDistrito = new javax.swing.JTextField();
         btnBuscarDistrito = new javax.swing.JButton();
         btnSalirDistrito = new javax.swing.JButton();
         lblDistritos = new javax.swing.JLabel();
+        jButton2 = new javax.swing.JButton();
         jLabel1 = new javax.swing.JLabel();
+        jScrollPane2 = new javax.swing.JScrollPane();
 
         setDefaultCloseOperation(javax.swing.WindowConstants.EXIT_ON_CLOSE);
         getContentPane().setLayout(new org.netbeans.lib.awtextra.AbsoluteLayout());
 
-        listDistritos.setModel(new javax.swing.AbstractListModel<String>() {
-            String[] strings = { "Nombre-Distrito-Poblacion-AreasSolidas", "Nombre-Distrito-Poblacion-AreasSolidas", "Nombre-Distrito-Poblacion-AreasSolidas", "Nombre-Distrito-Poblacion-AreasSolidas", "Nombre-Distrito-Poblacion-AreasSolidas" };
-            public int getSize() { return strings.length; }
-            public String getElementAt(int i) { return strings[i]; }
-        });
-        listDistritos.setLayoutOrientation(javax.swing.JList.VERTICAL_WRAP);
-        jScrollPane1.setViewportView(listDistritos);
-
-        getContentPane().add(jScrollPane1, new org.netbeans.lib.awtextra.AbsoluteConstraints(10, 110, 350, -1));
+        listDistritos.setColumns(20);
+        listDistritos.setRows(5);
+        getContentPane().add(listDistritos, new org.netbeans.lib.awtextra.AbsoluteConstraints(10, 120, 350, 180));
 
         jLabel2.setFont(new java.awt.Font("Tahoma", 1, 14)); // NOI18N
         jLabel2.setForeground(new java.awt.Color(255, 255, 255));
@@ -81,7 +94,7 @@ public class PantallaDistrito extends javax.swing.JFrame {
                 btnBuscarDistritoActionPerformed(evt);
             }
         });
-        getContentPane().add(btnBuscarDistrito, new org.netbeans.lib.awtextra.AbsoluteConstraints(260, 40, 100, 40));
+        getContentPane().add(btnBuscarDistrito, new org.netbeans.lib.awtextra.AbsoluteConstraints(260, 60, 100, 40));
 
         btnSalirDistrito.setBackground(new java.awt.Color(255, 51, 51));
         btnSalirDistrito.setFont(new java.awt.Font("Tahoma", 1, 11)); // NOI18N
@@ -92,15 +105,25 @@ public class PantallaDistrito extends javax.swing.JFrame {
                 btnSalirDistritoActionPerformed(evt);
             }
         });
-        getContentPane().add(btnSalirDistrito, new org.netbeans.lib.awtextra.AbsoluteConstraints(160, 270, 90, 40));
+        getContentPane().add(btnSalirDistrito, new org.netbeans.lib.awtextra.AbsoluteConstraints(10, 330, 120, 40));
 
         lblDistritos.setFont(new java.awt.Font("Tahoma", 1, 18)); // NOI18N
         lblDistritos.setForeground(new java.awt.Color(255, 255, 255));
         lblDistritos.setText("Distrito");
         getContentPane().add(lblDistritos, new org.netbeans.lib.awtextra.AbsoluteConstraints(10, 10, -1, -1));
 
+        jButton2.setBackground(new java.awt.Color(51, 255, 51));
+        jButton2.setText("Agregar Zona");
+        jButton2.addActionListener(new java.awt.event.ActionListener() {
+            public void actionPerformed(java.awt.event.ActionEvent evt) {
+                jButton2ActionPerformed(evt);
+            }
+        });
+        getContentPane().add(jButton2, new org.netbeans.lib.awtextra.AbsoluteConstraints(260, 330, 110, 40));
+
         jLabel1.setIcon(new javax.swing.ImageIcon(getClass().getResource("/imagenes/fondo_distrito.PNG"))); // NOI18N
-        getContentPane().add(jLabel1, new org.netbeans.lib.awtextra.AbsoluteConstraints(0, 0, 400, 330));
+        getContentPane().add(jLabel1, new org.netbeans.lib.awtextra.AbsoluteConstraints(0, 0, 400, 400));
+        getContentPane().add(jScrollPane2, new org.netbeans.lib.awtextra.AbsoluteConstraints(10, 120, -1, -1));
 
         pack();
     }// </editor-fold>//GEN-END:initComponents
@@ -122,6 +145,15 @@ public class PantallaDistrito extends javax.swing.JFrame {
          this.dispose();
     }//GEN-LAST:event_btnSalirDistritoActionPerformed
 
+    private void jButton2ActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_jButton2ActionPerformed
+
+        PantallaAgregarZonaNueva PAZ6 = new PantallaAgregarZonaNueva(this);
+        PAZ6.setLocationRelativeTo(null);
+        PAZ6.setVisible(true);
+        this.setVisible(false);
+        // TODO add your handling code here:
+    }//GEN-LAST:event_jButton2ActionPerformed
+
     
     private void buscar() {
         modeloLista.removeAllElements();
@@ -141,6 +173,12 @@ public class PantallaDistrito extends javax.swing.JFrame {
        modeloLista.addElement(nav.getNombre());
        
      }  
+    }
+    
+    void setDistritoZonanueva(DistritoZonanueva distritoZonanueva){
+        Distritozona.add(distritoZonanueva);
+        navegadores.add(distritoZonanueva);
+        actualizaLista();
     }
     /**
      * @param args the command line arguments
@@ -181,11 +219,12 @@ public class PantallaDistrito extends javax.swing.JFrame {
     // Variables declaration - do not modify//GEN-BEGIN:variables
     private javax.swing.JButton btnBuscarDistrito;
     private javax.swing.JButton btnSalirDistrito;
+    private javax.swing.JButton jButton2;
     private javax.swing.JLabel jLabel1;
     private javax.swing.JLabel jLabel2;
-    private javax.swing.JScrollPane jScrollPane1;
+    private javax.swing.JScrollPane jScrollPane2;
     private javax.swing.JLabel lblDistritos;
-    private javax.swing.JList<String> listDistritos;
+    private javax.swing.JTextArea listDistritos;
     private javax.swing.JTextField txtNombreDistrito;
     // End of variables declaration//GEN-END:variables
 }

@@ -5,11 +5,17 @@
  */
 package PantalllasGarbage;
 
+import garbageapp.DistritoZonanueva;
+import javax.swing.JOptionPane;
+
 /**
  *
  * @author hanze
  */
 public class PantallaAgregarZonaNueva extends javax.swing.JFrame {
+    
+    private DistritoZonanueva distritoZonanueva;
+    private PantallaDistrito padre;
 
     /**
      * Creates new form PantallaAgregarZonaNueva
@@ -17,6 +23,11 @@ public class PantallaAgregarZonaNueva extends javax.swing.JFrame {
     public PantallaAgregarZonaNueva() {
         initComponents();
         
+    }
+    
+    public PantallaAgregarZonaNueva(PantallaDistrito padre){
+        initComponents();
+        this.padre = padre;
     }
 
     /**
@@ -77,6 +88,11 @@ public class PantallaAgregarZonaNueva extends javax.swing.JFrame {
         btnSolicitar.setFont(new java.awt.Font("Tahoma", 1, 11)); // NOI18N
         btnSolicitar.setForeground(new java.awt.Color(0, 0, 255));
         btnSolicitar.setText("Solicitar");
+        btnSolicitar.addActionListener(new java.awt.event.ActionListener() {
+            public void actionPerformed(java.awt.event.ActionEvent evt) {
+                btnSolicitarActionPerformed(evt);
+            }
+        });
         getContentPane().add(btnSolicitar, new org.netbeans.lib.awtextra.AbsoluteConstraints(50, 410, 120, 40));
 
         btnCancelar.setBackground(new java.awt.Color(255, 0, 51));
@@ -101,6 +117,23 @@ public class PantallaAgregarZonaNueva extends javax.swing.JFrame {
          PP2.setVisible(true);
          this.dispose();
     }//GEN-LAST:event_btnCancelarActionPerformed
+
+    private void btnSolicitarActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_btnSolicitarActionPerformed
+    
+        if(JOptionPane.showConfirmDialog(this, "¿Deseas solicitar?")
+                == JOptionPane.OK_OPTION) {
+            distritoZonanueva = new DistritoZonanueva();
+            distritoZonanueva.setDistrito(txtDistrito.getText());
+            distritoZonanueva.setUbicacion(txtUbicacion.getText());
+            distritoZonanueva.setReferencia(txtReferencia.getText());
+            distritoZonanueva.setCalle(txtCalle.getText());
+            
+            this.padre.setDistritoZonanueva(distritoZonanueva);
+            this.padre.setVisible(true);
+            this.dispose();
+        }
+        // TODO add your handling code here:
+    }//GEN-LAST:event_btnSolicitarActionPerformed
 
     /**
      * @param args the command line arguments

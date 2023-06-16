@@ -5,6 +5,8 @@
  */
 package PantalllasGarbage;
 
+import javax.swing.JOptionPane;
+
 /**
  *
  * @author omar_
@@ -27,21 +29,21 @@ public class PantallaLogin extends javax.swing.JFrame {
     // <editor-fold defaultstate="collapsed" desc="Generated Code">//GEN-BEGIN:initComponents
     private void initComponents() {
 
-        jLabel2 = new javax.swing.JLabel();
+        lblUsuario = new javax.swing.JLabel();
         jButton2 = new javax.swing.JButton();
-        jButton1 = new javax.swing.JButton();
-        jTextField2 = new javax.swing.JTextField();
-        jLabel1 = new javax.swing.JLabel();
-        jTextField1 = new javax.swing.JTextField();
+        btnEntrarLogin = new javax.swing.JButton();
+        lblmail = new javax.swing.JLabel();
+        txtUsuarioLogin = new javax.swing.JTextField();
+        txtContraseñaLogin = new javax.swing.JPasswordField();
         jLabel3 = new javax.swing.JLabel();
 
         setDefaultCloseOperation(javax.swing.WindowConstants.EXIT_ON_CLOSE);
         getContentPane().setLayout(new org.netbeans.lib.awtextra.AbsoluteLayout());
 
-        jLabel2.setFont(new java.awt.Font("Tahoma", 1, 14)); // NOI18N
-        jLabel2.setForeground(new java.awt.Color(255, 255, 255));
-        jLabel2.setText("Contraseña:");
-        getContentPane().add(jLabel2, new org.netbeans.lib.awtextra.AbsoluteConstraints(20, 190, 120, 40));
+        lblUsuario.setFont(new java.awt.Font("Tahoma", 1, 14)); // NOI18N
+        lblUsuario.setForeground(new java.awt.Color(255, 255, 255));
+        lblUsuario.setText("Contraseña:");
+        getContentPane().add(lblUsuario, new org.netbeans.lib.awtextra.AbsoluteConstraints(20, 190, 120, 40));
 
         jButton2.setBackground(new java.awt.Color(0, 255, 0));
         jButton2.setFont(new java.awt.Font("Tahoma", 1, 11)); // NOI18N
@@ -54,23 +56,28 @@ public class PantallaLogin extends javax.swing.JFrame {
         });
         getContentPane().add(jButton2, new org.netbeans.lib.awtextra.AbsoluteConstraints(100, 330, 140, 40));
 
-        jButton1.setBackground(new java.awt.Color(51, 51, 255));
-        jButton1.setFont(new java.awt.Font("Tahoma", 1, 11)); // NOI18N
-        jButton1.setForeground(new java.awt.Color(0, 0, 204));
-        jButton1.setText("Iniciar Sesión");
-        jButton1.addActionListener(new java.awt.event.ActionListener() {
-            public void actionPerformed(java.awt.event.ActionEvent evt) {
-                jButton1ActionPerformed(evt);
+        btnEntrarLogin.setBackground(new java.awt.Color(51, 51, 255));
+        btnEntrarLogin.setFont(new java.awt.Font("Tahoma", 1, 11)); // NOI18N
+        btnEntrarLogin.setForeground(new java.awt.Color(0, 0, 204));
+        btnEntrarLogin.setText("Iniciar Sesión");
+        btnEntrarLogin.addMouseListener(new java.awt.event.MouseAdapter() {
+            public void mouseClicked(java.awt.event.MouseEvent evt) {
+                btnEntrarLoginMouseClicked(evt);
             }
         });
-        getContentPane().add(jButton1, new org.netbeans.lib.awtextra.AbsoluteConstraints(100, 280, 140, 40));
-        getContentPane().add(jTextField2, new org.netbeans.lib.awtextra.AbsoluteConstraints(20, 230, 300, 30));
+        btnEntrarLogin.addActionListener(new java.awt.event.ActionListener() {
+            public void actionPerformed(java.awt.event.ActionEvent evt) {
+                btnEntrarLoginActionPerformed(evt);
+            }
+        });
+        getContentPane().add(btnEntrarLogin, new org.netbeans.lib.awtextra.AbsoluteConstraints(100, 280, 140, 40));
 
-        jLabel1.setFont(new java.awt.Font("Tahoma", 1, 14)); // NOI18N
-        jLabel1.setForeground(new java.awt.Color(255, 255, 255));
-        jLabel1.setText("E-Mail:");
-        getContentPane().add(jLabel1, new org.netbeans.lib.awtextra.AbsoluteConstraints(20, 130, 120, 20));
-        getContentPane().add(jTextField1, new org.netbeans.lib.awtextra.AbsoluteConstraints(20, 160, 300, 30));
+        lblmail.setFont(new java.awt.Font("Tahoma", 1, 14)); // NOI18N
+        lblmail.setForeground(new java.awt.Color(255, 255, 255));
+        lblmail.setText("Usuario:");
+        getContentPane().add(lblmail, new org.netbeans.lib.awtextra.AbsoluteConstraints(20, 130, 120, 20));
+        getContentPane().add(txtUsuarioLogin, new org.netbeans.lib.awtextra.AbsoluteConstraints(20, 160, 300, 30));
+        getContentPane().add(txtContraseñaLogin, new org.netbeans.lib.awtextra.AbsoluteConstraints(20, 230, 300, 30));
 
         jLabel3.setIcon(new javax.swing.ImageIcon(getClass().getResource("/imagenes/fondo_login.PNG"))); // NOI18N
         jLabel3.setToolTipText("");
@@ -85,12 +92,50 @@ public class PantallaLogin extends javax.swing.JFrame {
          this.dispose();
     }//GEN-LAST:event_jButton2ActionPerformed
 
-    private void jButton1ActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_jButton1ActionPerformed
-        PantallaPrincipal PP = new PantallaPrincipal();
-         PP.setVisible(true);
-         this.dispose();
+    private void btnEntrarLoginActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_btnEntrarLoginActionPerformed
+
+    }//GEN-LAST:event_btnEntrarLoginActionPerformed
+
+    private void btnEntrarLoginMouseClicked(java.awt.event.MouseEvent evt) {//GEN-FIRST:event_btnEntrarLoginMouseClicked
+
+        String Usuario = txtUsuarioLogin.getText();
+        String Paswd = txtContraseñaLogin.getText();
         
-    }//GEN-LAST:event_jButton1ActionPerformed
+        if(Usuario.isEmpty() || Paswd.isEmpty()){
+            JOptionPane.showMessageDialog(null, "Algun campo esta vacio");
+            
+        }else{
+            if(Usuario.equals("Usuario") && Paswd.equals("1234")){
+                JOptionPane.showMessageDialog(null, "Bienvenido");
+                PantallaPrincipal PP = new PantallaPrincipal();
+                PP.setVisible(true);
+                this.dispose();
+                
+            }else
+            {
+                JOptionPane.showMessageDialog(null, "Su usuario o contraseña es incorrecto");
+            }
+        }
+        
+//        String Usuario= "admin";
+//        String Contraseña= "123";
+//        
+//        String Pass = new String (txtContraseñaLogin.getPassword());
+//        
+//        if(txtUsuarioLogin.getText().equals(Usuario)&& Pass.equals(Contraseña)){
+//            
+//            PantallaPrincipal PP = new PantallaPrincipal();
+//         PP.setVisible(true);
+//         this.dispose();
+//            
+//        }
+//        else
+//        {
+//            JOptionPane.showMessageDialog(this, "Usuario  /  Contraseña Incorrecto");
+//        }
+                
+// TODO add your handling code here:
+    }//GEN-LAST:event_btnEntrarLoginMouseClicked
 
     /**
      * @param args the command line arguments
@@ -128,12 +173,12 @@ public class PantallaLogin extends javax.swing.JFrame {
     }
 
     // Variables declaration - do not modify//GEN-BEGIN:variables
-    private javax.swing.JButton jButton1;
+    private javax.swing.JButton btnEntrarLogin;
     private javax.swing.JButton jButton2;
-    private javax.swing.JLabel jLabel1;
-    private javax.swing.JLabel jLabel2;
     private javax.swing.JLabel jLabel3;
-    private javax.swing.JTextField jTextField1;
-    private javax.swing.JTextField jTextField2;
+    private javax.swing.JLabel lblUsuario;
+    private javax.swing.JLabel lblmail;
+    private javax.swing.JPasswordField txtContraseñaLogin;
+    private javax.swing.JTextField txtUsuarioLogin;
     // End of variables declaration//GEN-END:variables
 }
