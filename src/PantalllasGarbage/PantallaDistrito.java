@@ -23,28 +23,53 @@ public class PantallaDistrito extends javax.swing.JFrame {
     List<Navegador> navegadores = new ArrayList<>();
     List<DistritoZonanueva> Distritozona = new ArrayList<>();
     String DatosLista;
+    String BusquedaLista;
     /**
      * Creates new form PantallaDistrito
      */
     
     public void Convertidor(){
-        int tam = modeloLista.size();
+        int tam=Distritozona.size();
         int count = 0;
-        
-        for(int=0;i<tam;i++)
+        String Total;
+        StringBuilder acumulador = new StringBuilder();
+        for(int i=0;i<tam;i++)
         {
-            Distritozona.get(i).
-            
+         acumulador.append("Distrito: "+ Distritozona.get(i).getDistrito()+"\n"+
+                 " Ubicacion: " +Distritozona.get(i).getUbicacion()+"\n"+
+                 " Referencia: " +Distritozona.get(i).getReferencia()+"\n"+
+                 " Calle: " +Distritozona.get(i).getCalle()+"\n"+
+                 "==================================================");
         }
-        
-            
+        DatosLista = acumulador.toString();    
     }
     
-    
+    public void ConvertidorBusqueda(String dato){
+        int tam=Distritozona.size();
+        int band = 0;
+        String Busqueda;
+        StringBuilder acumulador = new StringBuilder();
+        BusquedaLista="";
+        for(int i=0;i<tam;i++)
+        {
+          Busqueda = Distritozona.get(i).getUbicacion();
+          if(Busqueda.toLowerCase().contains(dato)){
+          acumulador.append("Distrito: "+ Distritozona.get(i).getDistrito()+"\n"+
+                 " Ubicacion: " +Distritozona.get(i).getUbicacion()+"\n"+
+                 " Referencia: " +Distritozona.get(i).getReferencia()+"\n"+
+                 " Calle: " +Distritozona.get(i).getCalle()+"\n"+
+                 "==================================================");
+          band=1;
+          }
+        }
+        if(band==1){
+            BusquedaLista = acumulador.toString();    
+        }
+    }
 
     public PantallaDistrito() {
         initComponents();
-        listDistritos.setText(DatosLista);
+       
     }
 
     /**
@@ -56,7 +81,8 @@ public class PantallaDistrito extends javax.swing.JFrame {
     // <editor-fold defaultstate="collapsed" desc="Generated Code">//GEN-BEGIN:initComponents
     private void initComponents() {
 
-        listDistritos = new javax.swing.JTextArea();
+        jScrollPane3 = new javax.swing.JScrollPane();
+        listDistritosOrigin = new javax.swing.JTextPane();
         jLabel2 = new javax.swing.JLabel();
         txtNombreDistrito = new javax.swing.JTextField();
         btnBuscarDistrito = new javax.swing.JButton();
@@ -65,13 +91,15 @@ public class PantallaDistrito extends javax.swing.JFrame {
         jButton2 = new javax.swing.JButton();
         jLabel1 = new javax.swing.JLabel();
         jScrollPane2 = new javax.swing.JScrollPane();
+        jScrollPane1 = new javax.swing.JScrollPane();
+        jTextPane1 = new javax.swing.JTextPane();
 
         setDefaultCloseOperation(javax.swing.WindowConstants.EXIT_ON_CLOSE);
         getContentPane().setLayout(new org.netbeans.lib.awtextra.AbsoluteLayout());
 
-        listDistritos.setColumns(20);
-        listDistritos.setRows(5);
-        getContentPane().add(listDistritos, new org.netbeans.lib.awtextra.AbsoluteConstraints(10, 120, 350, 180));
+        jScrollPane3.setViewportView(listDistritosOrigin);
+
+        getContentPane().add(jScrollPane3, new org.netbeans.lib.awtextra.AbsoluteConstraints(10, 150, 370, 160));
 
         jLabel2.setFont(new java.awt.Font("Tahoma", 1, 14)); // NOI18N
         jLabel2.setForeground(new java.awt.Color(255, 255, 255));
@@ -125,6 +153,10 @@ public class PantallaDistrito extends javax.swing.JFrame {
         getContentPane().add(jLabel1, new org.netbeans.lib.awtextra.AbsoluteConstraints(0, 0, 400, 400));
         getContentPane().add(jScrollPane2, new org.netbeans.lib.awtextra.AbsoluteConstraints(10, 120, -1, -1));
 
+        jScrollPane1.setViewportView(jTextPane1);
+
+        getContentPane().add(jScrollPane1, new org.netbeans.lib.awtextra.AbsoluteConstraints(10, 190, 370, 130));
+
         pack();
     }// </editor-fold>//GEN-END:initComponents
 
@@ -164,6 +196,8 @@ public class PantallaDistrito extends javax.swing.JFrame {
                 modeloLista.addElement(nav.getNombre());
             }
         }
+        ConvertidorBusqueda(txtNombreDistrito.getText().toLowerCase());
+        listDistritosOrigin.setText(BusquedaLista); 
     }
     
     void actualizaLista(){
@@ -179,6 +213,12 @@ public class PantallaDistrito extends javax.swing.JFrame {
         Distritozona.add(distritoZonanueva);
         navegadores.add(distritoZonanueva);
         actualizaLista();
+        
+        
+        Convertidor();
+        listDistritosOrigin.setText(DatosLista); 
+        
+        
     }
     /**
      * @param args the command line arguments
@@ -222,9 +262,12 @@ public class PantallaDistrito extends javax.swing.JFrame {
     private javax.swing.JButton jButton2;
     private javax.swing.JLabel jLabel1;
     private javax.swing.JLabel jLabel2;
+    private javax.swing.JScrollPane jScrollPane1;
     private javax.swing.JScrollPane jScrollPane2;
+    private javax.swing.JScrollPane jScrollPane3;
+    private javax.swing.JTextPane jTextPane1;
     private javax.swing.JLabel lblDistritos;
-    private javax.swing.JTextArea listDistritos;
+    private javax.swing.JTextPane listDistritosOrigin;
     private javax.swing.JTextField txtNombreDistrito;
     // End of variables declaration//GEN-END:variables
 }

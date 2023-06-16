@@ -26,7 +26,7 @@ public class DistritoZonanueva extends Distrito
     
     @Override
     public String getNombre() {
-     return "Distrito: "+ Distrito + "<html><br></html>" + " Ubicacion: " + Ubicacion 
+     return "Distrito: "+ Distrito + " Ubicacion: " + Ubicacion 
              + " Referencia: " + Referencia +
              " Calle: " + Calle ; 
     }

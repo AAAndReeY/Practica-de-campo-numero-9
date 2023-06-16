@@ -5,7 +5,6 @@
  */
 package garbageapp;
 
-import com.oracle.webservices.internal.api.message.DistributedPropertySet;
 
 /**
  *
