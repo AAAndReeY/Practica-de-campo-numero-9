@@ -38,52 +38,80 @@ public class PantallaCrearNuevaCuenta extends javax.swing.JFrame {
         txtContraseña = new javax.swing.JTextField();
         btnCrearCuentaNueva = new javax.swing.JButton();
         btnCancelar = new javax.swing.JButton();
+        jLabel1 = new javax.swing.JLabel();
 
         setDefaultCloseOperation(javax.swing.WindowConstants.EXIT_ON_CLOSE);
         getContentPane().setLayout(new org.netbeans.lib.awtextra.AbsoluteLayout());
 
         lblRegistrarse.setFont(new java.awt.Font("Tahoma", 1, 24)); // NOI18N
+        lblRegistrarse.setForeground(new java.awt.Color(255, 255, 255));
         lblRegistrarse.setText("Registrarse");
-        getContentPane().add(lblRegistrarse, new org.netbeans.lib.awtextra.AbsoluteConstraints(122, 14, 151, 41));
+        getContentPane().add(lblRegistrarse, new org.netbeans.lib.awtextra.AbsoluteConstraints(100, 0, 151, 41));
 
         jLabel2.setFont(new java.awt.Font("Tahoma", 1, 14)); // NOI18N
+        jLabel2.setForeground(new java.awt.Color(255, 255, 255));
         jLabel2.setText("Nombre Usuario:");
-        getContentPane().add(jLabel2, new org.netbeans.lib.awtextra.AbsoluteConstraints(10, 61, -1, -1));
-
-        txtNombreUsuario.setText("jTextField1");
-        getContentPane().add(txtNombreUsuario, new org.netbeans.lib.awtextra.AbsoluteConstraints(10, 89, 319, 33));
+        getContentPane().add(jLabel2, new org.netbeans.lib.awtextra.AbsoluteConstraints(10, 50, -1, -1));
+        getContentPane().add(txtNombreUsuario, new org.netbeans.lib.awtextra.AbsoluteConstraints(10, 70, 319, 33));
 
         jLabel3.setFont(new java.awt.Font("Tahoma", 1, 14)); // NOI18N
+        jLabel3.setForeground(new java.awt.Color(255, 255, 255));
         jLabel3.setText("Numero de Telefono:");
-        getContentPane().add(jLabel3, new org.netbeans.lib.awtextra.AbsoluteConstraints(10, 140, -1, -1));
-
-        txtNumeroTelefono.setText("jTextField2");
-        getContentPane().add(txtNumeroTelefono, new org.netbeans.lib.awtextra.AbsoluteConstraints(10, 168, 319, 34));
+        getContentPane().add(jLabel3, new org.netbeans.lib.awtextra.AbsoluteConstraints(10, 110, -1, -1));
+        getContentPane().add(txtNumeroTelefono, new org.netbeans.lib.awtextra.AbsoluteConstraints(10, 130, 319, 34));
 
         jLabel4.setFont(new java.awt.Font("Tahoma", 1, 14)); // NOI18N
+        jLabel4.setForeground(new java.awt.Color(255, 255, 255));
         jLabel4.setText("E-Mail:");
-        getContentPane().add(jLabel4, new org.netbeans.lib.awtextra.AbsoluteConstraints(10, 220, -1, -1));
-
-        txtEmail.setText("jTextField3");
-        getContentPane().add(txtEmail, new org.netbeans.lib.awtextra.AbsoluteConstraints(10, 248, 319, 33));
+        getContentPane().add(jLabel4, new org.netbeans.lib.awtextra.AbsoluteConstraints(10, 170, -1, -1));
+        getContentPane().add(txtEmail, new org.netbeans.lib.awtextra.AbsoluteConstraints(10, 190, 319, 33));
 
         jLabel5.setFont(new java.awt.Font("Tahoma", 1, 14)); // NOI18N
+        jLabel5.setForeground(new java.awt.Color(255, 255, 255));
         jLabel5.setText("Contraseña:");
-        getContentPane().add(jLabel5, new org.netbeans.lib.awtextra.AbsoluteConstraints(10, 299, -1, -1));
-
-        txtContraseña.setText("jTextField4");
-        getContentPane().add(txtContraseña, new org.netbeans.lib.awtextra.AbsoluteConstraints(10, 327, 319, 36));
+        getContentPane().add(jLabel5, new org.netbeans.lib.awtextra.AbsoluteConstraints(10, 230, -1, -1));
+        getContentPane().add(txtContraseña, new org.netbeans.lib.awtextra.AbsoluteConstraints(10, 250, 319, 36));
 
         btnCrearCuentaNueva.setBackground(new java.awt.Color(51, 255, 51));
+        btnCrearCuentaNueva.setFont(new java.awt.Font("Tahoma", 1, 11)); // NOI18N
+        btnCrearCuentaNueva.setForeground(new java.awt.Color(51, 255, 51));
         btnCrearCuentaNueva.setText("Crear Cuenta Nueva");
-        getContentPane().add(btnCrearCuentaNueva, new org.netbeans.lib.awtextra.AbsoluteConstraints(10, 381, 140, 42));
+        btnCrearCuentaNueva.addActionListener(new java.awt.event.ActionListener() {
+            public void actionPerformed(java.awt.event.ActionEvent evt) {
+                btnCrearCuentaNuevaActionPerformed(evt);
+            }
+        });
+        getContentPane().add(btnCrearCuentaNueva, new org.netbeans.lib.awtextra.AbsoluteConstraints(10, 310, 140, 42));
 
         btnCancelar.setBackground(new java.awt.Color(255, 0, 0));
+        btnCancelar.setFont(new java.awt.Font("Tahoma", 1, 11)); // NOI18N
+        btnCancelar.setForeground(new java.awt.Color(255, 0, 0));
         btnCancelar.setText("Cancelar");
-        getContentPane().add(btnCancelar, new org.netbeans.lib.awtextra.AbsoluteConstraints(192, 383, 137, 38));
+        btnCancelar.addActionListener(new java.awt.event.ActionListener() {
+            public void actionPerformed(java.awt.event.ActionEvent evt) {
+                btnCancelarActionPerformed(evt);
+            }
+        });
+        getContentPane().add(btnCancelar, new org.netbeans.lib.awtextra.AbsoluteConstraints(190, 310, 140, 40));
+
+        jLabel1.setIcon(new javax.swing.ImageIcon(getClass().getResource("/imagenes/fondoNuevoLogin.PNG"))); // NOI18N
+        getContentPane().add(jLabel1, new org.netbeans.lib.awtextra.AbsoluteConstraints(0, 0, 340, -1));
 
         pack();
     }// </editor-fold>//GEN-END:initComponents
+
+    private void btnCrearCuentaNuevaActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_btnCrearCuentaNuevaActionPerformed
+        PantallaNormasyCondiciones PNC = new PantallaNormasyCondiciones();
+         PNC.setVisible(true);
+         this.dispose();
+        
+    }//GEN-LAST:event_btnCrearCuentaNuevaActionPerformed
+
+    private void btnCancelarActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_btnCancelarActionPerformed
+        PantallaLogin PL = new PantallaLogin();
+         PL.setVisible(true);
+         this.dispose();
+    }//GEN-LAST:event_btnCancelarActionPerformed
 
     /**
      * @param args the command line arguments
@@ -123,6 +151,7 @@ public class PantallaCrearNuevaCuenta extends javax.swing.JFrame {
     // Variables declaration - do not modify//GEN-BEGIN:variables
     private javax.swing.JButton btnCancelar;
     private javax.swing.JButton btnCrearCuentaNueva;
+    private javax.swing.JLabel jLabel1;
     private javax.swing.JLabel jLabel2;
     private javax.swing.JLabel jLabel3;
     private javax.swing.JLabel jLabel4;

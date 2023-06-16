@@ -45,6 +45,7 @@ public class PantallaDistrito extends javax.swing.JFrame {
         btnBuscarDistrito = new javax.swing.JButton();
         btnSalirDistrito = new javax.swing.JButton();
         lblDistritos = new javax.swing.JLabel();
+        jLabel1 = new javax.swing.JLabel();
 
         setDefaultCloseOperation(javax.swing.WindowConstants.EXIT_ON_CLOSE);
         getContentPane().setLayout(new org.netbeans.lib.awtextra.AbsoluteLayout());
@@ -60,10 +61,10 @@ public class PantallaDistrito extends javax.swing.JFrame {
         getContentPane().add(jScrollPane1, new org.netbeans.lib.awtextra.AbsoluteConstraints(10, 110, 350, -1));
 
         jLabel2.setFont(new java.awt.Font("Tahoma", 1, 14)); // NOI18N
+        jLabel2.setForeground(new java.awt.Color(255, 255, 255));
         jLabel2.setText("Nombre Distrito :");
         getContentPane().add(jLabel2, new org.netbeans.lib.awtextra.AbsoluteConstraints(10, 60, -1, -1));
 
-        txtNombreDistrito.setText("txttext1");
         txtNombreDistrito.addActionListener(new java.awt.event.ActionListener() {
             public void actionPerformed(java.awt.event.ActionEvent evt) {
                 txtNombreDistritoActionPerformed(evt);
@@ -72,6 +73,8 @@ public class PantallaDistrito extends javax.swing.JFrame {
         getContentPane().add(txtNombreDistrito, new org.netbeans.lib.awtextra.AbsoluteConstraints(10, 80, 220, -1));
 
         btnBuscarDistrito.setBackground(new java.awt.Color(153, 255, 255));
+        btnBuscarDistrito.setFont(new java.awt.Font("Tahoma", 1, 11)); // NOI18N
+        btnBuscarDistrito.setForeground(new java.awt.Color(255, 255, 255));
         btnBuscarDistrito.setText("Buscar");
         btnBuscarDistrito.addActionListener(new java.awt.event.ActionListener() {
             public void actionPerformed(java.awt.event.ActionEvent evt) {
@@ -81,12 +84,23 @@ public class PantallaDistrito extends javax.swing.JFrame {
         getContentPane().add(btnBuscarDistrito, new org.netbeans.lib.awtextra.AbsoluteConstraints(260, 40, 100, 40));
 
         btnSalirDistrito.setBackground(new java.awt.Color(255, 51, 51));
+        btnSalirDistrito.setFont(new java.awt.Font("Tahoma", 1, 11)); // NOI18N
+        btnSalirDistrito.setForeground(new java.awt.Color(255, 0, 0));
         btnSalirDistrito.setText("Salir");
+        btnSalirDistrito.addActionListener(new java.awt.event.ActionListener() {
+            public void actionPerformed(java.awt.event.ActionEvent evt) {
+                btnSalirDistritoActionPerformed(evt);
+            }
+        });
         getContentPane().add(btnSalirDistrito, new org.netbeans.lib.awtextra.AbsoluteConstraints(160, 270, 90, 40));
 
         lblDistritos.setFont(new java.awt.Font("Tahoma", 1, 18)); // NOI18N
+        lblDistritos.setForeground(new java.awt.Color(255, 255, 255));
         lblDistritos.setText("Distrito");
         getContentPane().add(lblDistritos, new org.netbeans.lib.awtextra.AbsoluteConstraints(10, 10, -1, -1));
+
+        jLabel1.setIcon(new javax.swing.ImageIcon(getClass().getResource("/imagenes/fondo_distrito.PNG"))); // NOI18N
+        getContentPane().add(jLabel1, new org.netbeans.lib.awtextra.AbsoluteConstraints(0, 0, 400, 330));
 
         pack();
     }// </editor-fold>//GEN-END:initComponents
@@ -101,6 +115,12 @@ public class PantallaDistrito extends javax.swing.JFrame {
         buscar();
         // TODO add your handling code here:
     }//GEN-LAST:event_btnBuscarDistritoActionPerformed
+
+    private void btnSalirDistritoActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_btnSalirDistritoActionPerformed
+         PantallaPrincipal PP5 = new PantallaPrincipal();
+         PP5.setVisible(true);
+         this.dispose();
+    }//GEN-LAST:event_btnSalirDistritoActionPerformed
 
     
     private void buscar() {
@@ -161,6 +181,7 @@ public class PantallaDistrito extends javax.swing.JFrame {
     // Variables declaration - do not modify//GEN-BEGIN:variables
     private javax.swing.JButton btnBuscarDistrito;
     private javax.swing.JButton btnSalirDistrito;
+    private javax.swing.JLabel jLabel1;
     private javax.swing.JLabel jLabel2;
     private javax.swing.JScrollPane jScrollPane1;
     private javax.swing.JLabel lblDistritos;

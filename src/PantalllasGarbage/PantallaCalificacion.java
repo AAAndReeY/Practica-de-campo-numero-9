@@ -32,30 +32,56 @@ public class PantallaCalificacion extends javax.swing.JFrame {
         jLabel2 = new javax.swing.JLabel();
         txtComentario = new javax.swing.JTextField();
         btnSalir = new javax.swing.JButton();
+        jLabel1 = new javax.swing.JLabel();
 
         setDefaultCloseOperation(javax.swing.WindowConstants.EXIT_ON_CLOSE);
         getContentPane().setLayout(new org.netbeans.lib.awtextra.AbsoluteLayout());
 
         lblPuntuaApp.setFont(new java.awt.Font("Tahoma", 1, 18)); // NOI18N
+        lblPuntuaApp.setForeground(new java.awt.Color(255, 255, 255));
         lblPuntuaApp.setText("Puntua la App");
-        getContentPane().add(lblPuntuaApp, new org.netbeans.lib.awtextra.AbsoluteConstraints(20, 10, -1, -1));
+        getContentPane().add(lblPuntuaApp, new org.netbeans.lib.awtextra.AbsoluteConstraints(20, 20, -1, -1));
 
-        cbxEstrellas.setModel(new javax.swing.DefaultComboBoxModel<>(new String[] { "5 ESTRELLAS", "4 ESTRELLAS", "3 ESTRELLAS", "2 ESTRELLAS ", "1 ESTRELLA ", "CESAR PONGAME 20" }));
-        getContentPane().add(cbxEstrellas, new org.netbeans.lib.awtextra.AbsoluteConstraints(10, 50, 210, 20));
+        cbxEstrellas.setModel(new javax.swing.DefaultComboBoxModel<>(new String[] { "5 ESTRELLAS", "4 ESTRELLAS", "3 ESTRELLAS", "2 ESTRELLAS ", "1 ESTRELLAS" }));
+        cbxEstrellas.addActionListener(new java.awt.event.ActionListener() {
+            public void actionPerformed(java.awt.event.ActionEvent evt) {
+                cbxEstrellasActionPerformed(evt);
+            }
+        });
+        getContentPane().add(cbxEstrellas, new org.netbeans.lib.awtextra.AbsoluteConstraints(20, 60, 210, 20));
 
         jLabel2.setFont(new java.awt.Font("Tahoma", 1, 14)); // NOI18N
+        jLabel2.setForeground(new java.awt.Color(255, 255, 255));
         jLabel2.setText("Agregue un comentario :");
-        getContentPane().add(jLabel2, new org.netbeans.lib.awtextra.AbsoluteConstraints(10, 80, -1, -1));
-
-        txtComentario.setText("jTextField1");
-        getContentPane().add(txtComentario, new org.netbeans.lib.awtextra.AbsoluteConstraints(10, 110, 290, 60));
+        getContentPane().add(jLabel2, new org.netbeans.lib.awtextra.AbsoluteConstraints(20, 100, -1, -1));
+        getContentPane().add(txtComentario, new org.netbeans.lib.awtextra.AbsoluteConstraints(20, 140, 290, 60));
 
         btnSalir.setBackground(new java.awt.Color(204, 0, 51));
+        btnSalir.setFont(new java.awt.Font("Tahoma", 1, 11)); // NOI18N
+        btnSalir.setForeground(new java.awt.Color(255, 255, 255));
         btnSalir.setText("Salir");
-        getContentPane().add(btnSalir, new org.netbeans.lib.awtextra.AbsoluteConstraints(130, 210, 120, 40));
+        btnSalir.addActionListener(new java.awt.event.ActionListener() {
+            public void actionPerformed(java.awt.event.ActionEvent evt) {
+                btnSalirActionPerformed(evt);
+            }
+        });
+        getContentPane().add(btnSalir, new org.netbeans.lib.awtextra.AbsoluteConstraints(110, 220, 120, 40));
+
+        jLabel1.setIcon(new javax.swing.ImageIcon(getClass().getResource("/imagenes/fondo_puntuacion.PNG"))); // NOI18N
+        getContentPane().add(jLabel1, new org.netbeans.lib.awtextra.AbsoluteConstraints(0, 0, 390, 350));
 
         pack();
     }// </editor-fold>//GEN-END:initComponents
+
+    private void cbxEstrellasActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_cbxEstrellasActionPerformed
+        // TODO add your handling code here:
+    }//GEN-LAST:event_cbxEstrellasActionPerformed
+
+    private void btnSalirActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_btnSalirActionPerformed
+         PantallaPrincipal PP6 = new PantallaPrincipal();
+         PP6.setVisible(true);
+         this.dispose();
+    }//GEN-LAST:event_btnSalirActionPerformed
 
     /**
      * @param args the command line arguments
@@ -95,6 +121,7 @@ public class PantallaCalificacion extends javax.swing.JFrame {
     // Variables declaration - do not modify//GEN-BEGIN:variables
     private javax.swing.JButton btnSalir;
     private javax.swing.JComboBox<String> cbxEstrellas;
+    private javax.swing.JLabel jLabel1;
     private javax.swing.JLabel jLabel2;
     private javax.swing.JLabel lblPuntuaApp;
     private javax.swing.JTextField txtComentario;

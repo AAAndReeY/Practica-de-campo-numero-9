@@ -35,19 +35,21 @@ public class ContactoGargabage extends javax.swing.JFrame {
         jLabel4 = new javax.swing.JLabel();
         txtRecomendaciones = new javax.swing.JTextField();
         btnSalir = new javax.swing.JButton();
+        jlblimagenUser = new javax.swing.JLabel();
 
         setDefaultCloseOperation(javax.swing.WindowConstants.EXIT_ON_CLOSE);
         getContentPane().setLayout(new org.netbeans.lib.awtextra.AbsoluteLayout());
 
         jLabel1.setFont(new java.awt.Font("Tahoma", 1, 24)); // NOI18N
+        jLabel1.setForeground(new java.awt.Color(255, 255, 255));
         jLabel1.setText("CONTACTO GARGABAGE");
         getContentPane().add(jLabel1, new org.netbeans.lib.awtextra.AbsoluteConstraints(10, 10, 320, 41));
 
         jLabel2.setFont(new java.awt.Font("Tahoma", 1, 14)); // NOI18N
+        jLabel2.setForeground(new java.awt.Color(255, 255, 255));
         jLabel2.setText("Comentarios:");
         getContentPane().add(jLabel2, new org.netbeans.lib.awtextra.AbsoluteConstraints(10, 60, -1, -1));
 
-        txtComentarios.setText("txttext2");
         txtComentarios.addActionListener(new java.awt.event.ActionListener() {
             public void actionPerformed(java.awt.event.ActionEvent evt) {
                 txtComentariosActionPerformed(evt);
@@ -56,10 +58,10 @@ public class ContactoGargabage extends javax.swing.JFrame {
         getContentPane().add(txtComentarios, new org.netbeans.lib.awtextra.AbsoluteConstraints(10, 80, 160, -1));
 
         jLabel3.setFont(new java.awt.Font("Tahoma", 1, 14)); // NOI18N
+        jLabel3.setForeground(new java.awt.Color(255, 255, 255));
         jLabel3.setText("Mensajeria Interna :");
         getContentPane().add(jLabel3, new org.netbeans.lib.awtextra.AbsoluteConstraints(10, 120, -1, -1));
 
-        txtMensajeriaInter.setText("txttext3");
         txtMensajeriaInter.addActionListener(new java.awt.event.ActionListener() {
             public void actionPerformed(java.awt.event.ActionEvent evt) {
                 txtMensajeriaInterActionPerformed(evt);
@@ -68,10 +70,10 @@ public class ContactoGargabage extends javax.swing.JFrame {
         getContentPane().add(txtMensajeriaInter, new org.netbeans.lib.awtextra.AbsoluteConstraints(10, 140, 160, -1));
 
         jLabel4.setFont(new java.awt.Font("Tahoma", 1, 14)); // NOI18N
+        jLabel4.setForeground(new java.awt.Color(255, 255, 255));
         jLabel4.setText("Recomendaciones :");
         getContentPane().add(jLabel4, new org.netbeans.lib.awtextra.AbsoluteConstraints(10, 180, -1, -1));
 
-        txtRecomendaciones.setText("txttext1");
         txtRecomendaciones.addActionListener(new java.awt.event.ActionListener() {
             public void actionPerformed(java.awt.event.ActionEvent evt) {
                 txtRecomendacionesActionPerformed(evt);
@@ -81,7 +83,16 @@ public class ContactoGargabage extends javax.swing.JFrame {
 
         btnSalir.setBackground(new java.awt.Color(255, 51, 51));
         btnSalir.setText("Salir");
+        btnSalir.addActionListener(new java.awt.event.ActionListener() {
+            public void actionPerformed(java.awt.event.ActionEvent evt) {
+                btnSalirActionPerformed(evt);
+            }
+        });
         getContentPane().add(btnSalir, new org.netbeans.lib.awtextra.AbsoluteConstraints(120, 240, 90, 40));
+
+        jlblimagenUser.setIcon(new javax.swing.ImageIcon(getClass().getResource("/imagenes/fondoVentanas.PNG"))); // NOI18N
+        jlblimagenUser.setText("jLabel6");
+        getContentPane().add(jlblimagenUser, new org.netbeans.lib.awtextra.AbsoluteConstraints(0, 0, 320, 290));
 
         pack();
     }// </editor-fold>//GEN-END:initComponents
@@ -97,6 +108,12 @@ public class ContactoGargabage extends javax.swing.JFrame {
     private void txtRecomendacionesActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_txtRecomendacionesActionPerformed
         // TODO add your handling code here:
     }//GEN-LAST:event_txtRecomendacionesActionPerformed
+
+    private void btnSalirActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_btnSalirActionPerformed
+         PantallaPrincipal PP7 = new PantallaPrincipal();
+         PP7.setVisible(true);
+         this.dispose();
+    }//GEN-LAST:event_btnSalirActionPerformed
 
     /**
      * @param args the command line arguments
@@ -133,12 +150,14 @@ public class ContactoGargabage extends javax.swing.JFrame {
         });
     }
 
+    
     // Variables declaration - do not modify//GEN-BEGIN:variables
     private javax.swing.JButton btnSalir;
     private javax.swing.JLabel jLabel1;
     private javax.swing.JLabel jLabel2;
     private javax.swing.JLabel jLabel3;
     private javax.swing.JLabel jLabel4;
+    private javax.swing.JLabel jlblimagenUser;
     private javax.swing.JTextField txtComentarios;
     private javax.swing.JTextField txtMensajeriaInter;
     private javax.swing.JTextField txtRecomendaciones;

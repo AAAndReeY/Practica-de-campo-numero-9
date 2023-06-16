@@ -30,23 +30,41 @@ public class PantallaCambiarIdioma extends javax.swing.JFrame {
         lblCambiarIdioma = new javax.swing.JLabel();
         btnSalir = new javax.swing.JButton();
         cmbIdioma = new javax.swing.JComboBox<>();
+        jLabel1 = new javax.swing.JLabel();
 
         setDefaultCloseOperation(javax.swing.WindowConstants.EXIT_ON_CLOSE);
         getContentPane().setLayout(new org.netbeans.lib.awtextra.AbsoluteLayout());
 
         lblCambiarIdioma.setFont(new java.awt.Font("Tahoma", 1, 18)); // NOI18N
+        lblCambiarIdioma.setForeground(new java.awt.Color(255, 255, 255));
         lblCambiarIdioma.setText("Cambiar Idioma");
         getContentPane().add(lblCambiarIdioma, new org.netbeans.lib.awtextra.AbsoluteConstraints(120, 10, -1, -1));
 
         btnSalir.setBackground(new java.awt.Color(255, 0, 0));
+        btnSalir.setFont(new java.awt.Font("Tahoma", 1, 11)); // NOI18N
+        btnSalir.setForeground(new java.awt.Color(255, 0, 51));
         btnSalir.setText("Salir");
-        getContentPane().add(btnSalir, new org.netbeans.lib.awtextra.AbsoluteConstraints(140, 110, 110, 30));
+        btnSalir.addActionListener(new java.awt.event.ActionListener() {
+            public void actionPerformed(java.awt.event.ActionEvent evt) {
+                btnSalirActionPerformed(evt);
+            }
+        });
+        getContentPane().add(btnSalir, new org.netbeans.lib.awtextra.AbsoluteConstraints(140, 100, 110, 30));
 
-        cmbIdioma.setModel(new javax.swing.DefaultComboBoxModel<>(new String[] { "Ingles", "Ruso", "Aleman", "Quechua", "Aymara", "Binario", "Brainle", "Codigo Morse", " " }));
+        cmbIdioma.setModel(new javax.swing.DefaultComboBoxModel<>(new String[] { "Ingles", "Español", " ", " " }));
         getContentPane().add(cmbIdioma, new org.netbeans.lib.awtextra.AbsoluteConstraints(20, 60, 210, -1));
+
+        jLabel1.setIcon(new javax.swing.ImageIcon(getClass().getResource("/imagenes/fondo_idioma.PNG"))); // NOI18N
+        getContentPane().add(jLabel1, new org.netbeans.lib.awtextra.AbsoluteConstraints(0, 0, 390, 150));
 
         pack();
     }// </editor-fold>//GEN-END:initComponents
+
+    private void btnSalirActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_btnSalirActionPerformed
+         PantallaPrincipal PP9 = new PantallaPrincipal();
+         PP9.setVisible(true);
+         this.dispose();
+    }//GEN-LAST:event_btnSalirActionPerformed
 
     /**
      * @param args the command line arguments
@@ -86,6 +104,7 @@ public class PantallaCambiarIdioma extends javax.swing.JFrame {
     // Variables declaration - do not modify//GEN-BEGIN:variables
     private javax.swing.JButton btnSalir;
     private javax.swing.JComboBox<String> cmbIdioma;
+    private javax.swing.JLabel jLabel1;
     private javax.swing.JLabel lblCambiarIdioma;
     // End of variables declaration//GEN-END:variables
 }

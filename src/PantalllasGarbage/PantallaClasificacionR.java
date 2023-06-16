@@ -31,14 +31,17 @@ public class PantallaClasificacionR extends javax.swing.JFrame {
         jScrollPane1 = new javax.swing.JScrollPane();
         listClasificacion = new javax.swing.JTable();
         btnSalir = new javax.swing.JButton();
+        jLabel1 = new javax.swing.JLabel();
 
         setDefaultCloseOperation(javax.swing.WindowConstants.EXIT_ON_CLOSE);
         getContentPane().setLayout(new org.netbeans.lib.awtextra.AbsoluteLayout());
 
         lblClasificacionResiduos.setFont(new java.awt.Font("Tahoma", 1, 24)); // NOI18N
+        lblClasificacionResiduos.setForeground(new java.awt.Color(255, 255, 255));
         lblClasificacionResiduos.setText("Clasificacion de Residuos");
         getContentPane().add(lblClasificacionResiduos, new org.netbeans.lib.awtextra.AbsoluteConstraints(60, 10, 320, 41));
 
+        listClasificacion.setBackground(new java.awt.Color(226, 166, 242));
         listClasificacion.setModel(new javax.swing.table.DefaultTableModel(
             new Object [][] {
                 {"VIDRIOS", null},
@@ -68,11 +71,27 @@ public class PantallaClasificacionR extends javax.swing.JFrame {
         getContentPane().add(jScrollPane1, new org.netbeans.lib.awtextra.AbsoluteConstraints(20, 70, 390, 160));
 
         btnSalir.setBackground(new java.awt.Color(255, 0, 51));
+        btnSalir.setFont(new java.awt.Font("Tahoma", 1, 11)); // NOI18N
+        btnSalir.setForeground(new java.awt.Color(255, 0, 0));
         btnSalir.setText("Salir");
+        btnSalir.addActionListener(new java.awt.event.ActionListener() {
+            public void actionPerformed(java.awt.event.ActionEvent evt) {
+                btnSalirActionPerformed(evt);
+            }
+        });
         getContentPane().add(btnSalir, new org.netbeans.lib.awtextra.AbsoluteConstraints(150, 260, 120, 40));
+
+        jLabel1.setIcon(new javax.swing.ImageIcon(getClass().getResource("/imagenes/fondo_residuos.PNG"))); // NOI18N
+        getContentPane().add(jLabel1, new org.netbeans.lib.awtextra.AbsoluteConstraints(0, 0, 430, 330));
 
         pack();
     }// </editor-fold>//GEN-END:initComponents
+
+    private void btnSalirActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_btnSalirActionPerformed
+         PantallaPrincipal PP10 = new PantallaPrincipal();
+         PP10.setVisible(true);
+         this.dispose();
+    }//GEN-LAST:event_btnSalirActionPerformed
 
     /**
      * @param args the command line arguments
@@ -111,6 +130,7 @@ public class PantallaClasificacionR extends javax.swing.JFrame {
 
     // Variables declaration - do not modify//GEN-BEGIN:variables
     private javax.swing.JButton btnSalir;
+    private javax.swing.JLabel jLabel1;
     private javax.swing.JScrollPane jScrollPane1;
     private javax.swing.JLabel lblClasificacionResiduos;
     private javax.swing.JTable listClasificacion;

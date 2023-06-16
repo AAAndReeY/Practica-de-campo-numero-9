@@ -31,14 +31,17 @@ public class PantallaGentionProb extends javax.swing.JFrame {
         jScrollPane1 = new javax.swing.JScrollPane();
         listGestorProveedores = new javax.swing.JTable();
         btnSalir = new javax.swing.JButton();
+        jLabel1 = new javax.swing.JLabel();
 
         setDefaultCloseOperation(javax.swing.WindowConstants.EXIT_ON_CLOSE);
         getContentPane().setLayout(new org.netbeans.lib.awtextra.AbsoluteLayout());
 
         lblGestionProveedores.setFont(new java.awt.Font("Tahoma", 1, 24)); // NOI18N
+        lblGestionProveedores.setForeground(new java.awt.Color(255, 255, 255));
         lblGestionProveedores.setText("Gestion de Provedores ");
         getContentPane().add(lblGestionProveedores, new org.netbeans.lib.awtextra.AbsoluteConstraints(20, 10, 320, 41));
 
+        listGestorProveedores.setBackground(new java.awt.Color(227, 166, 253));
         listGestorProveedores.setModel(new javax.swing.table.DefaultTableModel(
             new Object [][] {
                 {null, null, null, null},
@@ -63,11 +66,27 @@ public class PantallaGentionProb extends javax.swing.JFrame {
         getContentPane().add(jScrollPane1, new org.netbeans.lib.awtextra.AbsoluteConstraints(30, 90, 550, 240));
 
         btnSalir.setBackground(new java.awt.Color(255, 0, 51));
+        btnSalir.setFont(new java.awt.Font("Tahoma", 1, 11)); // NOI18N
+        btnSalir.setForeground(new java.awt.Color(255, 255, 255));
         btnSalir.setText("Salir");
+        btnSalir.addActionListener(new java.awt.event.ActionListener() {
+            public void actionPerformed(java.awt.event.ActionEvent evt) {
+                btnSalirActionPerformed(evt);
+            }
+        });
         getContentPane().add(btnSalir, new org.netbeans.lib.awtextra.AbsoluteConstraints(230, 360, 140, 40));
+
+        jLabel1.setIcon(new javax.swing.ImageIcon(getClass().getResource("/imagenes/fondo_provedores.PNG"))); // NOI18N
+        getContentPane().add(jLabel1, new org.netbeans.lib.awtextra.AbsoluteConstraints(0, 0, 610, 430));
 
         pack();
     }// </editor-fold>//GEN-END:initComponents
+
+    private void btnSalirActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_btnSalirActionPerformed
+         PantallaPrincipal PP8 = new PantallaPrincipal();
+         PP8.setVisible(true);
+         this.dispose();
+    }//GEN-LAST:event_btnSalirActionPerformed
 
     /**
      * @param args the command line arguments
@@ -106,6 +125,7 @@ public class PantallaGentionProb extends javax.swing.JFrame {
 
     // Variables declaration - do not modify//GEN-BEGIN:variables
     private javax.swing.JButton btnSalir;
+    private javax.swing.JLabel jLabel1;
     private javax.swing.JScrollPane jScrollPane1;
     private javax.swing.JLabel lblGestionProveedores;
     private javax.swing.JTable listGestorProveedores;

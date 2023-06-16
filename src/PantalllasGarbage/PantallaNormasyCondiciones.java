@@ -30,13 +30,15 @@ public class PantallaNormasyCondiciones extends javax.swing.JFrame {
         lblNormasyCondiciones = new javax.swing.JLabel();
         txtNormasyCondiciones = new javax.swing.JTextField();
         btnAceptar = new javax.swing.JButton();
+        jLabel1 = new javax.swing.JLabel();
 
         setDefaultCloseOperation(javax.swing.WindowConstants.EXIT_ON_CLOSE);
         getContentPane().setLayout(new org.netbeans.lib.awtextra.AbsoluteLayout());
 
         lblNormasyCondiciones.setFont(new java.awt.Font("Tahoma", 1, 24)); // NOI18N
+        lblNormasyCondiciones.setForeground(new java.awt.Color(255, 255, 255));
         lblNormasyCondiciones.setText("NORMAS Y CONDICIONES");
-        getContentPane().add(lblNormasyCondiciones, new org.netbeans.lib.awtextra.AbsoluteConstraints(110, 10, 350, 41));
+        getContentPane().add(lblNormasyCondiciones, new org.netbeans.lib.awtextra.AbsoluteConstraints(90, 10, 350, 41));
 
         txtNormasyCondiciones.setHorizontalAlignment(javax.swing.JTextField.CENTER);
         txtNormasyCondiciones.setText("Normas y Condiciones");
@@ -45,11 +47,21 @@ public class PantallaNormasyCondiciones extends javax.swing.JFrame {
                 txtNormasyCondicionesActionPerformed(evt);
             }
         });
-        getContentPane().add(txtNormasyCondiciones, new org.netbeans.lib.awtextra.AbsoluteConstraints(100, 80, 340, 220));
+        getContentPane().add(txtNormasyCondiciones, new org.netbeans.lib.awtextra.AbsoluteConstraints(80, 80, 340, 220));
 
         btnAceptar.setBackground(new java.awt.Color(0, 255, 255));
+        btnAceptar.setFont(new java.awt.Font("Tahoma", 1, 11)); // NOI18N
+        btnAceptar.setForeground(new java.awt.Color(0, 255, 255));
         btnAceptar.setText("Aceptar");
-        getContentPane().add(btnAceptar, new org.netbeans.lib.awtextra.AbsoluteConstraints(210, 330, 100, 30));
+        btnAceptar.addActionListener(new java.awt.event.ActionListener() {
+            public void actionPerformed(java.awt.event.ActionEvent evt) {
+                btnAceptarActionPerformed(evt);
+            }
+        });
+        getContentPane().add(btnAceptar, new org.netbeans.lib.awtextra.AbsoluteConstraints(200, 330, 120, 40));
+
+        jLabel1.setIcon(new javax.swing.ImageIcon(getClass().getResource("/imagenes/fondo_normas.PNG"))); // NOI18N
+        getContentPane().add(jLabel1, new org.netbeans.lib.awtextra.AbsoluteConstraints(0, 0, 520, 400));
 
         pack();
     }// </editor-fold>//GEN-END:initComponents
@@ -57,6 +69,12 @@ public class PantallaNormasyCondiciones extends javax.swing.JFrame {
     private void txtNormasyCondicionesActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_txtNormasyCondicionesActionPerformed
         // TODO add your handling code here:
     }//GEN-LAST:event_txtNormasyCondicionesActionPerformed
+
+    private void btnAceptarActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_btnAceptarActionPerformed
+         PantallaLogin PL = new PantallaLogin();
+         PL.setVisible(true);
+         this.dispose();
+    }//GEN-LAST:event_btnAceptarActionPerformed
 
     /**
      * @param args the command line arguments
@@ -95,6 +113,7 @@ public class PantallaNormasyCondiciones extends javax.swing.JFrame {
 
     // Variables declaration - do not modify//GEN-BEGIN:variables
     private javax.swing.JButton btnAceptar;
+    private javax.swing.JLabel jLabel1;
     private javax.swing.JLabel lblNormasyCondiciones;
     private javax.swing.JTextField txtNormasyCondiciones;
     // End of variables declaration//GEN-END:variables
